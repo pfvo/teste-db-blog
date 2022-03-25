@@ -33,7 +33,7 @@ const getLatest = () => {
         cardTittle3.textContent = posts[2].tittle;
         
     })
-    .catch(err => res.status(400).json('unable to fetch the lastest posts'))
+    .catch(err => console.log(err, "unable to fetch latest posts"))
 }
 
 const getPost = (card) => {

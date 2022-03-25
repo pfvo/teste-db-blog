@@ -23,6 +23,7 @@ app.get('/', (req, res)=> {
 })
 
 app.get('/editor', (req, res) => {
+    console.log('requesting editor')
     res.sendFile(path.join(initialPath, 'editor.html'))
 })
 
