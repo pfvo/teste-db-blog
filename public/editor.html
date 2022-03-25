@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/index.css">
+        <link rel="stylesheet" type="text/css" href="/css/editor.css">
+        <script src="/js/editor.js" defer></script>
+        <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Início</li>
+            <li><a href="/editor">Editor</a></li>
+            <li class="search">
+                <img src="/img/mag.png" alt="lupa">
+                <input type="search" placeholder="Procurar">
+            </li>
+        </ul>
+    </nav>
+    <div class="banner">
+        <input type="file" accept="image/*" id="banner-upload" hidden/>
+        <label for="banner-upload" class="banner-upload-btn">
+            <div>
+                <img src="/img/upload.png" alt='upload banner'/>
+            </div>
+        </label>
+    </div>
+    <div class="blog-post">
+        
+        <textarea type="text" class="blog-post-tittle" placeholder="Blog Post Tittle"></textarea>
+        <textarea type="text" class="blog-post-content" placeholder="Blog Post content"></textarea>
+
+    </div>
+    <div class="blog-options">
+        <button class="publish-btn">Publish</button>
+        <input type="file" accept="image/*" id="image-upload" hidden>
+        <label for="image-upload" class="image-upload-btn">Upload Image</label>
+        
+    </div>
+</body>
+</html>
