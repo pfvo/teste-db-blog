@@ -1,5 +1,3 @@
-const res = require("express/lib/response")
-
 const btn = document.querySelector('.btntest')
 const banner = document.querySelector('.banner')
 const bannerUpload = document.querySelector('#banner-upload')
