@@ -4,7 +4,6 @@ const bpt = document.querySelector('.blog-post-tittle')
 const bpd = document.querySelector('.blog-post-date')
 const nav = document.querySelector('nav')
 
-
 let blogId = decodeURI(location.pathname.split('/').pop())
 const fetchElements = () => {
     console.log("yay")

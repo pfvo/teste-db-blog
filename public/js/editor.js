@@ -1,3 +1,5 @@
+const res = require("express/lib/response")
+
 const btn = document.querySelector('.btntest')
 const banner = document.querySelector('.banner')
 const bannerUpload = document.querySelector('#banner-upload')
@@ -9,19 +11,7 @@ const imageUpload = document.querySelector('#image-upload')
 const imageUploadBtn = document.querySelector('.image-upload-btn')
 let bannerPath;
 
-const test2 = () => {
-    if (bp.value.length >= 5 && bpt.value.length >= 1) {
-        publishBtn.style.backgroundColor = 'black'
-    } else {
-        publishBtn.style.backgroundColor = "grey"
-    }
-    console.log('total letras: ',bp.value.length)
-    console.log('total palavras: ',bp.value.split(" ").length)
-}
-
-const editorUploadImage = (uploadFile) => {
-    console.log(location.origin)
-    
+const editorUploadImage = (uploadFile) => {  
     const [file] = uploadFile.files;
     const formdata = new FormData();
     if (file && file.type.includes('image')) {
@@ -34,9 +24,8 @@ const editorUploadImage = (uploadFile) => {
             .then(data => data.json())
             .then(url => {
             bannerPath = location.origin + url;
-            console.log(bannerPath)
             return banner.style.backgroundImage = `url("${url}")`
-            })
+            }).catch(e => console.log(e, "my error"))
         } else if (uploadFile === imageUpload) {
             formdata.append('image', uploadFile.files[0]);
             fetch('/upload', {
@@ -45,13 +34,11 @@ const editorUploadImage = (uploadFile) => {
             })
             .then(resp => resp.json())
             .then(url => uploadedImage(url.imagePath, url.imageName))
-
+            .catch(e => console.log(e, "my error"))
         }
     }
 }
 const uploadedImage = (imgPath, alt) => {
-    console.log(imgPath)
-    console.log(alt)
     let currentPosition = bp.selectionStart;
     let textToInsert = `\r![${alt}](${imgPath})\r`; 
     bp.value = bp.value.slice(0, currentPosition) + textToInsert + bp.value.slice(currentPosition);
