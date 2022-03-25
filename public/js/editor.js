@@ -61,11 +61,6 @@ const publishPost = () => {
 
 }
 
-
-bp.addEventListener('input', test2)
-bpt.addEventListener('input', test2)
-
-
 publishBtn.addEventListener('click', publishPost);
 imageUpload.addEventListener('change', () => editorUploadImage(imageUpload))
 bannerUpload.addEventListener('change', () => editorUploadImage(bannerUpload))
