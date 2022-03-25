@@ -43,6 +43,9 @@ const uploadedImage = (imgPath, alt) => {
 }
 
 const publishPost = () => {
+    console.log('banner', bannerPath)
+    console.log('bpt', bpt.value)
+    console.log('bp', bp.value)
     if(!bannerPath || bpt.value.length < 1 || bp.value.length < 1) {
         return console.log('sorry, you need to fill everithing')
     }
