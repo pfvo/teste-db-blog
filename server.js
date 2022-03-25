@@ -84,4 +84,4 @@ app.post('/latestPosts', (req, res) => {
 })
 
 
-app.listen(process.env.PORT || 80, ()=> console.log('listening......'))
+app.listen(process.env.PORT || 3000, ()=> console.log('listening......'))
