@@ -6,8 +6,10 @@ const app = express();
 const knex = require('knex')({
     client: 'pg',
     connection: {
-      connectionString : process.env.DATABASE_URL,
-      ssl: true
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
     }
   });
 
@@ -82,4 +84,4 @@ app.post('/latestPosts', (req, res) => {
 })
 
 
-app.listen(process.env.PORT || 3000, ()=> console.log('listening......'))
+app.listen(process.env.PORT || 80, ()=> console.log('listening......'))

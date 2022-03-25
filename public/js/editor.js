@@ -60,7 +60,7 @@ const publishPost = () => {
     })
     .then(post => post.json())
     .then(data => location.href = `/${data[0].id}`)
-    .catch(e => console.log("Front end error", e))
+    
 
 }
 
